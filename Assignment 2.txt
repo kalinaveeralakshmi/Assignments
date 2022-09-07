@@ -1,0 +1,148 @@
+1.Explain three dimensional data indexing ?
+Ans.Array indexing and slicing are important parts in data analsis and many different types
+of mathematical operations.we always do not work with a whole array or matrix or data frame
+Semantic queries on indexed objects allow the reuse of the 3D scenes.The continous evolution
+of computing capabilities of desktop.computer is also a factor that facilitates the large 
+deployement of 3D information contents .the construction of a 3D Scene is a complex and time
+consuming task.thus being able to reuse the 3D scenes is a very important issue for the
+multimedia.
+
+2.what's the difference betweeen a series and a data frame?
+Ans.series is a type of list which can take integer values,string values,double value and more.
+series can only contain single list with index,whereas data frame can be made of more than one
+series or we can say that a data frames is a collection of series that can be used to analyse
+the data.
+
+3.What role does pandas play in data cleaning?
+Ans.over time companies produce and collect a massive amount of data,depending on the company
+this can come in many different forms such as user generated content,job applicant data,blog
+posts,sensor data and payrall transactions.Due to the immense number of source systems that can
+generate data and the number of people that contribute to data generation we can never guarante
+that the data we are receiving is a clean record.These records may be incomplete due to missing
+attributes.They may have an incorrect spelling for user.entered text fields or they may have an
+incorrect value such as a date of birth in the future.
+In order to get an understanding of which aspects of the data set need cleaning we first need to
+see what data we are dealing with .The best way to do this is .info()and .describe()
+pandas offers a diverge range of built in functions that can be used to clean and manipulate data
+sets prior to analysis.It can allow you to drop incomplete rows and columns,fill missing values and
+improve the readability of the data set through category renaming.
+
+4.How do you use pandas to make a data frame out of n-dimensional array?
+Ans.pandas is a data manipulation module data frame let you store tabular data in python.The data
+frame lets you easily store and manipulate tabular data like rows and columns.
+A data frame can be created from a list,or a dictionary or numpy array.
+since a data frame can be considered as a two dimensional data structure ,we can use a two dimensional
+numpy array to create a data frame.A is two dimensional array with 4 rows and 3 columns we can pass it
+to the dta frame function.pandas assigns integer index for columns by default.
+
+5.Explain the notion of pandas ploting?
+Plotting
+Pandas uses the plot() method to create diagrams.
+
+We can use Pyplot, a submodule of the Matplotlib library to visualize the diagram on the screen.
+
+Read more about Matplotlib in our Matplotlib Tutorial.
+
+Example
+Import pyplot from Matplotlib and visualize our DataFrame:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data.csv')
+
+df.plot()
+
+plt.show()
+The examples in this page uses a CSV file called: 'data.csv'.
+
+Download data.csv or Open data.csv
+
+Scatter Plot
+Specify that you want a scatter plot with the kind argument:
+
+kind = 'scatter'
+
+A scatter plot needs an x- and a y-axis.
+
+In the example below we will use "Duration" for the x-axis and "Calories" for the y-axis.
+
+Include the x and y arguments like this:
+
+x = 'Duration', y = 'Calories'
+
+Example
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data.csv')
+
+df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
+
+plt.show()
+Result
+
+
+Remember: In the previous example, we learned that the correlation between "Duration" and "Calories" was 0.922721, and we conluded with the fact that higher duration means more calories burned.
+
+By looking at the scatterplot, I will agree.
+
+Let's create another scatterplot, where there is a bad relationship between the columns, like "Duration" and "Maxpulse", with the correlation 0.009403:
+
+Example
+A scatterplot where there are no relationship between the columns:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data.csv')
+
+df.plot(kind = 'scatter', x = 'Duration', y = 'Maxpulse')
+
+plt.show()
+Result
+
+
+w
+3
+s
+c
+h
+o
+o
+l
+s
+C
+E
+R
+T
+I
+F
+I
+E
+D
+.
+2
+0
+2
+1
+Get Certified!
+Complete the Pandas modules, do the exercises, take the exam, and you will become w3schools certified!
+
+Histogram
+Use the kind argument to specify that you want a histogram:
+
+kind = 'hist'
+
+A histogram needs only one column.
+
+A histogram shows us the frequency of each interval, e.g. how many workouts lasted between 50 and 60 minutes?
+
+In the example below we will use the "Duration" column to create the histogram:
+
+Example
+df["Duration"].plot(kind = 'hist')
+Result
+
+
+

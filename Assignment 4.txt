@@ -1,0 +1,178 @@
+1Q.Explain the difference between cassandra and typical data bases?
+Ans.Cassandra is a free and open-source, distributed, wide-column store, NoSQL database management system designed to handle
+Difference between Cassandra and RDBMS:
+S.No.	CASSANDRA	RDBMS
+1.	Cassandra is a high performance and highly scalable
+ distributed NoSQL database management system.RDBMS is a Database management system or software which is designed for relational databases.
+2.Cassandra is a NoSQL database.	      RDBMS uses SQL for querying and maintaining the database.
+3.It deals with unstructured data.    It deals with structured data.large amounts of data across many
+                               4.	It has a flexible schema.	It has fixed schema.
+5.Cassandra has peer-to-peer architecture with no single point of failure.	RDBMS has master-slave core architecture means a single point of failure.
+6.Cassandra handles high volume incoming data velocity.	RDBMS handles moderate incoming data velocity.
+7.In RDBMS there is limited data source means data come from many locations.	In Cassandra there are various data source means data come from one/few location.
+8.It supports simple transactions.	It supports complex and nested transactions.
+9.In Cassandra the outermost container is Keyspace.	In RDBMS the outermost container is database.
+10.Cassandra follows decentralized deployments.	RDBMS follows centralized deployments.
+11.In Cassandra data written in many locations.	In RDBMS mainly data are written in one location.
+12.In Cassandra row represents a unit of replication.	In RDBMS row represents a single record.
+13.In Cassandra column represents a unit of storage.	In RDBMS column represents an attribute.
+14.In Cassandra, relationships are represented using collections.	In RDBMS relationships are represented using keys and join etc.
+
+
+2Q.What exactly is CQLSH?
+Ans.his chapter introduces the Cassandra query language shell and explains how to use its commands.
+
+By default, Cassandra provides a prompt Cassandra query language shell (cqlsh) that allows users to communicate with it.
+Using this shell, you can execute Cassandra Query Language (CQL).
+Using cqlsh, you can
+define a schema,
+insert data, and
+execute a query.
+Starting cqlsh
+Start cqlsh using the command cqlsh as shown below. It gives the Cassandra cqlsh prompt as output.
+
+[hadoop@linux bin]$ cqlsh
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 2.1.2 | CQL spec 3.2.0 | Native protocol v3]
+Use HELP for help.
+cqlsh>
+Cqlsh − As discussed above, this command is used to start the cqlsh prompt. In addition, it supports a few more options as well. The following table explains all the options of cqlsh and their usage.
+
+Options	Usage
+cqlsh --help	Shows help topics about the options of cqlsh commands.
+cqlsh --version	Provides the version of the cqlsh you are using.
+cqlsh --color	Directs the shell to use colored output.
+cqlsh --debug	Shows additional debugging information.
+cqlsh --execute
+
+cql_statement
+
+Directs the shell to accept and execute a CQL command.
+cqlsh --file= “file name”	If you use this option, Cassandra executes the command in the given file and exits.
+cqlsh --no-color	Directs Cassandra not to use colored output.
+cqlsh -u “user name”	Using this option, you can authenticate a user. The default user name is: cassandra.
+cqlsh-p “pass word”	Using this option, you can authenticate a user with a password. The default password is: cassandra.
+Cqlsh Commands
+Cqlsh has a few commands that allow users to interact with it. The commands are listed below.
+
+Documented Shell Commands
+Given below are the Cqlsh documented shell commands. These are the commands used to perform tasks such as displaying help topics,
+exit from cqlsh, describe,etc.
+
+HELP − Displays help topics for all cqlsh commands.
+CAPTURE − Captures the output of a command and adds it to a file.
+CONSISTENCY − Shows the current consistency level, or sets a new consistency level.
+COPY − Copies data to and from Cassandra.
+DESCRIBE − Describes the current cluster of Cassandra and its objects.
+EXPAND − Expands the output of a query vertically.
+EXIT − Using this command, you can terminate cqlsh.
+PAGING − Enables or disables query paging.
+SHOW − Displays the details of current cqlsh session such as Cassandra version, host, or data type assumptions.
+SOURCE − Executes a file that contains CQL statements.
+TRACING − Enables or disables request tracing.
+
+CQL Data Definition Commands
+CREATE KEYSPACE − Creates a KeySpace in Cassandra.
+USE − Connects to a created KeySpace.
+ALTER KEYSPACE − Changes the properties of a KeySpace.
+DROP KEYSPACE − Removes a KeySpace
+CREATE TABLE − Creates a table in a KeySpace.
+ALTER TABLE − Modifies the column properties of a table.
+DROP TABLE − Removes a table.
+TRUNCATE − Removes all the data from a table.
+CREATE INDEX − Defines a new index on a single column of a table.
+DROP INDEX − Deletes a named index.
+
+CQL Data Manipulation Commands
+INSERT − Adds columns for a row in a table.
+UPDATE − Updates a column of a row.
+DELETE − Deletes data from a table.
+BATCH − Executes multiple DML statements at once.
+
+CQL Clauses
+SELECT − This clause reads data from a table
+WHERE − The where clause is used along with select to read a specific data.
+ORDERBY − The orderby clause is used along with select to read a specific data in a specific order.
+
+3Q.Explain the cassandra cluster idea?
+Ans.A cluster in Cassandra is one of the shells in the whole Cassandra database.
+Many Cassandra Clusters combine together to form the database in Cassandra.
+A Cluster is basically the outermost shell or storage unit in a database.
+The Cassandra Cluster contains many different layers of storage units.
+Cassandra is a peer-to-peer distributed system made up of a cluster of nodes in which
+any node can accept a read or write request. Similar to Amazon's Dynamo DB, every node 
+in the cluster communicates state information about itself and other nodes 
+using the peer-to-peer gossip communication protocol.
+
+4Q.Give an example to demonstrate the class notion?
+Ans.Notion is a powerful note-taking and productivity tool. With features for organizing notes, 
+classes, lectures, and more it can be an invaluable resource to support studies and navigate student life.
+EX.Job Applications
+The Job Application template is practical for use during the time leading up to your graduation. 
+As it’s likely you’d want to start applying for jobs, this template will help you keep your job hunting activities
+in order with help in planning your applications.
+This table includes all essential categories for the job-hunting process. Just add your entries
+in the table as-is or customize it to fit your preferences. To help keep track of the stages you’re at for each job,
+you can attach the cover letters and resumes used for each application.
+
+5Q.Use an example to explain the object?
+Ans.A python is an object-oriented programming language. Almost everything in Python is considered as an object.
+An object has its own properties(attributes) and behavior(methods).
+A class is a blueprint of the objects or can be termed as object constructor for creating objects.
+One class can have many objects and value of properties for different objects can be different.
+Example of properties and behavior of an object
+Let’s take the example of car as an object. Its properties will include its color, company name,
+year of manufacture , price , mileage etc. The behavior of the car will include the functions it can perform,
+this will include increase speed, decrease speed, apply brakes etc. Object basically related everything with real life objects. 
+Everything we find around us in real life has some properties and some functions.
+Example of class and object
+Different objects belonging to same class can have different properties. For example, Person(Human) can be treated as a
+class which has properties such as name, age,gender etc. Every individual can be treated as an object of the class human or Person.
+Each individual will have different values of the properties of class Person.Everyone will have different names, age and gender.
+Creating object in Python
+Creating object of a class is simple. The name of the class must be known and object can be created as follows −
+Object_name= class_name()
+Example
+Live Demo
+class Person:
+   name=""
+   age=0
+   city=""
+   def display(self):
+      print("Name : ",self.name)
+      print("Age : ",self.age)
+      print("City : ",self.city)
+
+p1=Person()
+p1.name="Rahul"
+p1.age=20
+p1.city="Kolkata"
+p1.display()
+
+print()
+
+p2=Person()
+p2.name="Karan"
+p2.age=22
+p2.city="Bangalore"
+p2.display()
+
+print()
+p1.display()
+In the above implementation, p1=Person() is the object instantiation. p1 is the name of the object . 
+We accessed the properties of the class through object p1 and gave them different values and later called the
+display function to display values of this object.Later,we do the same for second object p2 and display properties of p2.
+At the end, we again call display() for object p1 to show that each object holds its own value of properties and those
+are independent of the other objects.
+Output
+Name : Rahul
+Age : 20
+City : Kolkata
+Name : Karan
+Age : 22
+City : Bangalore
+Name : Rahul
+Age : 20
+City : Kolkata
+raja
+Pawandeep

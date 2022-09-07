@@ -1,0 +1,434 @@
+1Q.Explain why selenium is important in web scrapping?
+Ans.Web scraping or data extraction from internet sites can be done with various tools and methods. 
+The more complex sites to scrape are always the ones that look for suspicious behaviors and non-human patterns.
+Therefore, the tools we use for scraping must simulate human behavior as much as possible.
+The tools that are developed and can simulate human behavior are testing tools, and one of the most commonly used and well-known tools as such is Selenium.
+In our previous blog post in this series we talked about puppeteer and how it is used for web scraping. 
+Selenium is a framework for web testing that allows simulating various browsers and was initially made for 
+testing front-end components and websites. As you can probably guess, whatever one would like to test, another 
+would like to scrape. And in the case of Selenium, this is a perfect library for scraping. Or is it
+Selenium was first developed by Jason Huggins in 2004 as an internal tool for a company he worked for. 
+Since then it has been evolved a lot but the concept has remained the same: a framework that simulates (or in truth really operates as) a web browser.
+Basically, Selenium is a library that can control an automated version of Google Chrome, Firefox, Safari, Vivaldi, etc. 
+You can use it in an automated process and imitate a normal user’s behavior. If for example, you would like to check your competitor’s
+top 10 ranking products daily, you would write a piece of code that will open a Chrome window (automatically, using Selenium), surf 
+to your competitor’s storefront or search results on Amazon and scrape the data of their leading products.
+Selenium is composed of 5 components that make the testing (or scraping) process possible:
+Selenium IDE:
+This is a real IDE for testing. This is actually a Chrome Extension or a Firefox Add on, and allows recording, 
+editing and debugging tests. This component is less functional for scraping since usually scraping would be done using an API.
+Selenium Client API:
+This is the API that allows us to communicate with selenium using an API. There are various libraries for different programming
+languages so scraping can be done in JavaScript, Java, C#, R, Python, and Ruby. It is continuously supported and improved by a strong community.
+Selenium WebDriver:
+This is the component of Selenium that actually plays the browser’s part in the scraping. The driver is just like a remote 
+control that connects to a specific browser (like in anything else, each remote control is designed to control a specific browser), 
+and through it, we can control the browser and tell it what to do.
+Selenium Grid:
+This is not a part of selenium itself, but more of a tool to allow us to use multiple selenium instances on remote machines.
+Since our previous article talked about Puppeteer and praised it for being the best tool for web scraping, let’s examine 
+I know Puppeteer isn’t for everyone and you might be already into Selenium, want to write a python scraper or jus
+Web scraping using Selenium is rather straightforward. I don’t want to go into a specific language 
+(We will add more language-specific tutorials in the future), but the steps are very similar in every language.
+Feel free to use the official Selenium Documentation for in-depth details. The first and most important step is to install
+the Selenium web driver component
+3 Best practices for web scraping with Selenium
+Scraping with Selenium is rather straight forwards. First, you need to get the HTML of the div, component or page you 
+are scraping. This is done by navigating to that page using the web driver and then using a selector to extract the data you need.
+There are 3 key points you should notice though:
+1. Use a good proxy server with IP rotation
+This is the pitfall you can most easily fall to in case you are a programmer who is starting his scraping journey –
+If you do not use a good web proxy service you will get blocked. All modern sites including Google, Amazon, Airbnb, eBay, 
+and many others use advanced anti-scraping mechanisms. Some put more effort into it than others, but all of them will start
+blocking you very quickly if you don’t use a proxy service and change your address every X amount of requests. What is X? depends 
+on the website, but it varies between 5 and 20 usually.
+Once you have your proxy in place and have a rotation mechanism for the IPs you use, the number of times you will be blocked by
+websites will be reduced to around zero.
+2. Find the sweet spot in your crawling rate
+Crawling too fast is a big problem and will cause you to hit a lot of anti scrape defenses on the websites you are scraping. 
+Of course, you want this to be as fast as possible, but scraping too fast is also sometimes painfully slow.
+Try to play with it. Start with a request per second and increase this. make sure that for this test you are using a different IP address 
+every time and that you are trying to fetch different objects from the website you are testing.
+3. Use user-agent rotation
+When sending a request for a webpage or an object, the browser sends a header called User-Agent. It is necessary to change this every few requests,
+and always send a “legitimate” User-Agent (one that conceals the fact that this is a headless browser).
+
+2Q.Whats the difference between scrapping images and scrapping websites? use and example to demonstrate your point
+Ans.With millions of information getting scraped daily, data scraping is now a part of the new internet trend.
+Despite this, Statista still estimated the amount of data generated on the internet in 2020 alone to be 64.2 zettabytes. 
+It then projected that this value would’ve increased by more than 179 percent by 2025.
+Big organizations and individuals have used the data available on the web for purposes including,
+but not limited to: predictive marketing, stock price prediction, sales forecasting, competitive monitoring, 
+and more. With these applications, it’s glaring that data is a driver of growth for many businesses today.
+Additionally, with the world now drifting more towards automation, data-driven machines are now springing up.
+These machines, as accurate as they are, feed on data using machine learning technology. A strict rule of machine 
+learning requires that an algorithm learns patterns from big data over time. Thus, it probably would’ve been impossible 
+to train machines without data. Nonetheless, images, texts, videos, and products on e-commerce websites are all 
+valuable information that drives the world of artificial intelligence.
+It’s, therefore not far-fetched, why existing companies, start-ups, and individuals resort to the web to gather as
+much information as they can. Ultimately, it means in today’s business world, the more data you have, the more likely
+you are to be ahead of your competitors. Thus, web scraping becomes essential.
+Web scraping, as it sounds, is an act of extracting or sweeping off information from the web. 
+Regardless of the target data, web scraping may be automated using scripted languages and dedicated 
+scraping tools or done manually via copying and pasting. Manual web scraping, of course, isn’t practical.
+And while writing a scraping script might help, it can be costly and technical as you might need to hire a programmer for it.
+However, using automatic no-code web scraping tools makes the process easy and faster without shedding huge bucks. 
+Automatio, for instance, in addition to its versatile automation toolset, also offers a reliable, flexible, fast, 
+and efficient out-of-the-box no-code tool for scraping any website. So it lets you get as much data as you want, 
+and you can design your scraping bot in no time without writing a single line of code.
+Web scrapers use the hypertext transfer protocol (HTTP) to request data from a web page using the get method.
+ On most occasions, once it receives a valid response from the web page, a scraper collects updated content from the client side.
+ It does so by attaching itself to specific HTML tags containing readily updated target data.
+
+There are many methods of web scraping, though. For instance, a scraping bot can evolve to request data directly from another website’s database. Thus, getting real-time updated content from the provider’s server. This type of request to another database from a data scraper usually requires that the website offering the data provides an application programming interface (API), which uses defined authentication protocols to connect the scraper to its database.
+
+Web scrapers created using Python, for instance, may use the request.get method to retrieve data from a source or use dedicated web scraping libraries like BeautifulSoup to gather rendered content from a web page. Those built using JavaScript typically depend on fetch or Axios to connect and get data from a source.
+
+After getting the data, scrapers often dump collected information into a dedicated database, a JSON object, a text file, or an excel file. And because of the inconsistencies in the gathered information, data cleaning often follows scraping.
+
+Web Scraping Methods
+Whether you use third-party automated tools or code from scratch, web scraping involves any or a combination of these methods:
+
+DOM or tag parsing: DOM parsing involves client-side inspection of a webpage to create an in-depth DOM tree that shows all nodes. Thus, making it easy to retrieve related data from a webpage.
+Tag grabbing: Here, a web scraper targets specific tags on a web page and collects their content. For example, an e-commerce scraper might collect content in all h2 tags because they contain product names and reviews.
+HTTP API requests: This involves connecting to a data source using an API. It’s helpful when the goal is to retrieve updated content from a database.
+Use of semantic or metadata annotation: This method leverages the relationship between a group of data called metadata to extract information in a trendy fashion. For instance, you might decide to retrieve information relating to animals and countries from a web page.
+Unix text gripping: Text gripping uses standard Unix regex to grab matching data from a large log of files or a web page.
+What Is Web Crawling and How Does it Work?
+
+While a crawler or a spider bot might download a website’s content in the process of crawling it, scraping isn’t its ultimate goal. A web crawler typically scans the information on a website to check specific metrics. Ultimately it learns about a website’s structure and what it’s all about.
+
+A crawler works by collecting Unique Resource Locators (URLs) belonging to many web pages into a crawl frontier. It then uses a site downloader to retrieve content, including the entire DOM structure, to create replicas of browsed web pages. It then stores these into a database, where they can be accessed as a list of relevant results when queried.
+
+Thus, a web crawler is a programmed software that serially and rapidly surfs the internet for content and organizes them to display relevant ones upon request.
+
+Some crawlers like Google and Bing bots, for instance, rank content based on many factors. A notable ranking factor is the use of naturally occurring keywords in a website’s content. You can view this as a seller collecting different items from a wholesale store, arranging them in order of importance, and providing the most relevant to buyers on request. Invariably, a crawling bot typically branches into related external links it finds while crawling a website. It then crawls and indexes them as well.
+
+There are many crawlers out there besides Google and Bing bots, though. And many of them also offer specific services besides indexing.
+
+Unlike a web scraper, a crawling bot surfs the web continuously. In essence, it’s automatically triggered. It then gathers real-time content from many websites as they get updated on the client side. Moving across a website, they recognize and pick up all crawlable links to assess scripts, HTML tags, and metadata on all its pages, except for those restricted by one means or another. Sometimes, spider bots leverage site maps to achieve the same purpose. Websites with sitemaps are, however, faster to crawl than those without one.
+
+Applications of Web Crawling
+
+Unlike web scraping, web crawling has more applications ranging from Search Engine Optimization (SEO) analytics to search engine indexing, general performance monitoring, and more. And part of its applications may also include scraping a web page.
+
+While you might manually scrape the web slowly, you can’t crawl it all by yourself, as it requires faster and more
+accurate bots; this is why they sometimes call crawlers spider bots.
+After creating and launching your website, for instance, Google’s crawling algorithm automatically crawls 
+it within few days to display semantics like meta tags, header tags, and relevant content when people search for it.
+As earlier highlighted, depending on its goal, a spider bot might crawl your website to extract its data, index it in 
+search engines, audit its security, compare it with competitors’ content, or analyze its SEO compliance. But despite its 
+positives, like web scrapers, we can’t sweep the possible malicious use of crawlers under the hood.
+Types of Web Crawlers
+Based on their applications, crawling bots come in various forms. Here is a list of the different types and what they do:
+Content-focused web crawlers: These types of spider bots collect related content across the web. Ultimately, they work by ranking URLs of 
+related websites based on how relevant their content is to a search term. Because they focus on retrieving more niche-related content, an advantage 
+of content or topical crawling bots is that they use fewer resources.
+In-house crawlers: Some organizations build in-house crawlers for specific purposes. These could include spider bots made for checking
+ software vulnerabilities. The onus of managing them is often on the programmers who’re familiar with the architecture of the organization’s software.
+Continuous web crawlers: Also called an incremental spider bot. A progressive crawler browses websites’ content repeatedly as it gets updated. 
+The crawling may be scheduled or random, depending on specific settings.
+Synergetic or distributed crawling bots: Distributed bots aim to optimize the tedious crawling activities that may be overwhelming when using a 
+single bot. Invariably, they work together towards the same goal. So they efficiently fragment the crawling workload. Thus, they’re generally 
+faster and more efficient than traditional ones.
+Monitoring bots: Whether a source authorizes them or not, these crawlers use unique algorithms to spy on competitors’ content and traffic. 
+Even if they don’t impede the functioning of the website they monitor, they might start drawing traffic away from other websites into the bot’s source.
+While people sometimes use them this way, their positive uses outweigh their downsides. For instance, some organizations use them in-house to discover
+potential loopholes in their software or improve SEO.
+Parallel spider bots: Although they’re also distributed, parallel crawlers only surf and download fresh content. Nevertheless, they may ignore a website if it’s not regularly updated or contains old content.
+Key Differences Between Web Crawlers and Web Scrapers
+To narrow the explanations down, here are the notable differences between scraping and crawling:
+
+Unlike web crawlers, scrapers don’t necessarily need to follow the pattern of downloading data into a database. It may write it into other file types.
+Web crawlers are more generic and may include web scraping in their workflow.
+Scraping bots target specific web pages and content. So they may not collect data at once from multiple sources.
+Unlike the static to manually triggered data collecting nature of scrapers, web crawlers regularly gather real-time content.
+While scraping bots only aim to fetch data when prompted, web crawlers follow specific algorithms. So many tech companies use them to get real-time web insights. And it’s also schedulable. One of its use-cases is periodic web traffic and SEO analytics.
+Crawling involves serial whole web download and subsequent indexing based on relevance. Web scraping, on the other hand, doesn’t index retrieved content.
+Unlike crawling bots which are more functionally versatile and expensive to develop, building a scraper is cost-effective and less time-consuming.
+Key Similarities Between Web Crawling and Web Scraping
+While we’ve maintained that crawling and scaping are different in many ways, they still share some similarities:
+
+They both access data by making HTTP requests.
+They’re both automated processes. So they provide more accuracy during data retrieval.
+Dedicated tools are available all over the web to either scrape or crawl a website.
+They can both serve malicious purposes when used against a sources’ data protection terms.
+Web crawlers and scrapers are subject to outright blockades — either through IP clamp down or other means.
+Although the workflow may differ, they both download data from the web.
+
+
+3Q.Explain how MongoDB indexes data?
+Ans.is leading NoSQL database written in C++. It is high scalable and provides high performance and availability. 
+It works on the concept of collections and documents. Collection in MongoDB is group of related documents that are bound together.
+The collection does not follow any schema which is one of the remarkable feature of MongoDB. 
+Indexing in MongoDB : 
+MongoDB uses indexing in order to make the query processing more efficient. If there is no indexing,
+then the MongoDB must scan every document in the collection and retrieve only those documents that match the query. 
+Indexes are special data structures that stores some information related to the documents such that it becomes easy for MongoDB to
+find the right data file. The indexes are order by the value of the field specified in the index. 
+Creating an Index : 
+MongoDB provides a method called createIndex() that allows user to create an index. 
+Syntax – 
+db.COLLECTION_NAME.createIndex({KEY:1}) 
+The key determines the field on the basis of which you want to create an index and 1 (or -1) determines the order
+in which these indexes will be arranged(ascending or descending). 
+Example – 
+db.mycol.createIndex({“age”:1})
+{
+“createdCollectionAutomatically” : false,
+“numIndexesBefore” : 1,
+“numIndexesAfter” : 2,
+“ok” : 1
+} 
+The createIndex() method also has a number of optional parameters. 
+These include: 
+background (Boolean) 
+unique (Boolean)  
+name (string)  
+sparse (Boolean) 
+Drop an Index  
+In order to drop an index, MongoDB provides the dropIndex() method. 
+Syntax – 
+db.NAME_OF_COLLECTION.dropIndex({KEY:1}) 
+The dropIndex() methods can only delete one index at a time. In order to delete (or drop) multiple indexes from the collection,
+MongoDB provides the dropIndexes() method that takes multiple indexes as its parameters. 
+Syntax – 
+db.NAME_OF_COLLECTION.dropIndexes({KEY1:1, KEY2, 1}) 
+The dropIndex() methods can only delete one index at a time. In order to delete (or drop) multiple indexes from the collection, 
+MongoDB provides the dropIndexes() method that takes multiple indexes as its parameters. 
+Get description of all indexes : 
+The getIndexes() method in MongoDB gives a description of all the indexes that exists in the given collection. 
+Syntax – 
+db.NAME_OF_COLLECTION.getIndexes() 
+It will retrieve all the description of the indexes created within the collection.
+
+4Q.What is the significance of SET modifier?
+Ans.Set expressions are used to define the scope of a calculation. The central part of the set expression is the set 
+modifier that specifies a selection. This is used to modify the user selection, or the selection in the set identifier, and
+the result defines a new scope for the calculation.
+The set modifier consists of one or more field names, each followed by a selection that should be made on the field. 
+The modifier is enclosed by angled brackets: < >
+
+For example:
+Sum ( {$<Year = {2015}>} Sales )
+Count ( {1<Country = {Germany}>} distinct OrderID )
+Sum ( {$<Year = {2015}, Country = {Germany}>} Sales )
+Element sets
+An element set can be defined using the following:
+A list of values
+A search
+A reference to another field
+
+A set function
+
+If the element set definition is omitted, the set modifier will clear any selection in this field. For example:
+
+Sum( {$<Year = >} Sales )
+
+Examples: Chart expressions for set modifiers based on element sets
+Examples - chart expressions
+Listed values
+The most common example of an element set is one that is based on a list of field values enclosed in curly brackets. For example:
+
+{$<Country = {Canada, Germany, Singapore}>}
+
+{$<Year = {2015, 2016}>}
+
+The inner curly brackets define the element set. The individual values are separated by commas.
+
+Quotes and case sensitivity
+If the values contain blanks or special characters, the values need to be quoted. Single quotes will be a literal, case-sensitive match with a single field value. Double quotes imply a case-insensitive match with one or several field values. For example:
+
+<Country = {'New Zealand'}>
+
+Matches New Zealand only.
+
+<Country = {"New Zealand"}>
+
+Matches New Zealand, NEW ZEALAND, and new zealand.
+
+Dates must be enclosed in quotes and use the date format of the field in question. For example:
+
+<ISO_Date = {'2021-12-31'}>
+
+<US_Date = {'12/31/2021'}>
+
+<UK_Date = {'31/12/2021'}>
+
+Double quotes can be substituted by square brackets or by grave accents.
+
+Searches
+Element sets can also be created through searches. For example:
+
+<Country = {"C*"}>
+
+<Ingredient = {"*garlic*"}>
+
+<Year = {">2015"}>
+
+<Date = {">12/31/2015"}>
+
+Wildcards can be used in a text searches: An asterisk (*) represents any number of characters, and a question mark (?) represents a single character.
+ Relational operators can be used to define numeric searches.
+
+You should always use double quotes for searches. Searches are case-insensitive.
+
+For more information, see Set modifiers with searches.
+
+Dollar expansions
+Dollar expansions are needed if you want to use a calculation inside your element set. For example, if you want to look at the last possible year only,
+ you can use:
+
+<Year = {$(=Max(Year))}>
+
+For more information, see Set modifiers with dollar-sign expansions.
+
+Selected values in other fields
+Modifiers can be based on the selected values of another field. For example:
+
+<OrderDate = DeliveryDate>
+
+This modifier will take the selected values from DeliveryDate and apply those as a selection on OrderDate. If there are many distinct values –
+ more than a couple of hundred – then this operation is CPU intensive and should be avoided.
+
+Element set functions
+The element set can also be based on the set functions P() (possible values) and E() (excluded values).
+
+For example, if you want to select countries where the product Cap has been sold, you can use:
+
+<Country = P({1<Product={Cap}>} Country)>
+
+Similarly, if you want to pick out the countries where the product Cap has not been sold, you can use:
+
+= E({1<Product={Cap}>} Country)>
+
+5Q.Explain the MongoDB aggregation framework?
+Ans.Aggregation operations process data records and return computed results. Aggregation operations group values from multiple documents together, and can perform a variety of operations on the grouped data to return a single result.
+
+By using the built-in aggregation operators available in MongoDB, we are able to do analytics on a cluster of servers we're already using without having to move the data to another platform, like Apache Spark or Hadoop. While those, and similar, platforms are fast, the data transfer from MongoDB to them can be slow and potentially expensive. By using the aggregation framework the work is done inside MongoDB and then the final results can be sent to the application typically resulting in a smaller amount of data being moved around. It also allows for the querying of the LIVE version of the data and not an older copy of data from a batch.
+
+Aggregation in MongoDB allows for the transforming of data and results in a more powerful fashion than from using the find() command. Through the use of multiple stages and expressions, you are able to build a "pipeline" of operations on your data to perform analytic operations. What do I mean by a "pipeline"? The aggregation framework is conceptually similar to the *nix command line pipe, |. In the *nix command line pipeline, a pipe transfers the standard output to some other destination. The output of one command is sent to another command for further processing.
+
+*nix pipeline example
+
+In the aggregation framework, we think of stages instead of commands. And the stage "output" is documents. Documents go into a stage, some work is done, and documents come out. From there they can move onto another stage or provide output.
+
+Aggregation Stages
+At the time of this writing, there are twenty-eight different aggregation stages available. These different stages provide the ability to do a wide variety of tasks. For example, we can build an aggregation pipeline that matches a set of documents based on a set of criteria, groups those documents together, sorts them, then returns that result set to us.
+
+Aggreggation Pipeline example
+
+Or perhaps our pipeline is more complicated and the document flows through the $match, $unwind, $group, $sort, $limit, $project, and finally a $skip stage.
+
+This can be confusing and some of these concepts are worth repeating. Therefore, let's break this down a bit further:
+
+A pipeline starts with documents
+These documents come from a collection, a view, or a specially designed stage
+In each stage, documents enter, work is done, and documents exit
+The stages themselves are defined using the document syntax
+Let's take a look at an example pipeline. Our documents are from the Sample Data that's available in MongoDB Atlas and the routes collection in the sample_training database. Here's a sample document:
+
+{
+"_id":{
+    "$oid":"56e9b39b732b6122f877fa31"
+},
+"airline":{
+   "id":{
+       "$numberInt":"410"
+   },
+   "name":"Aerocondor"
+   ,"alias":"2B"
+   ,"iata":"ARD"
+},
+"src_airport":"CEK",
+"dst_airport":"KZN",
+"Codeshare":"",
+"stops":{
+    "$numberInt":"0"
+},
+"airplane":"CR2"
+}
+
+copy code
+If you haven't yet set up your free cluster on MongoDB Atlas, now is a great time to do so. You have all the instructions in this blog post.
+
+For this example query, let's find the top three airlines that offer the most direct flights out of the airport in Portland, Oregon, USA (PDX). To start with, we'll do a $match stage so that we can concentrate on doing work only on those documents that meet a base of conditions. In this case, we'll look for documents with a src_airport, or source airport, of PDX and that are direct flights, i.e. that have zero stops.
+
+{
+  $match: {
+    "src_airport": "PDX",
+    "stops": 0
+  }
+}
+
+copy code
+That reduces the number of documents in our pipeline down from 66,985 to 113. Next, we'll group by the airline name and count the number of flights:
+
+{
+    $group: {
+        _id: {
+            "airline name": "$airline.name"
+        },
+        count: {
+            $sum: 1
+        }
+    }
+}
+
+copy code
+With the addition of the $group stage, we're down to 16 documents. Let's sort those with a $sort stage and sort in descending order:
+
+{
+    $sort: {
+        count: -1
+}
+
+copy code
+Then we can add a $limit stage to just have the top three airlines that are servicing Portland, Oregon:
+
+{
+   $limit: 3
+}
+
+copy code
+After putting the documents in the sample_training.routes collection through this aggregation pipeline, our results show us that the top three airlines offering non-stop flights departing from PDX are Alaska, American, and United Airlines with 39, 17, and 13 flights, respectively.
+
+How does this look in code? It's fairly straightforward with using the db.aggregate() function. For example, in Python you would do something like:
+
+from pymongo import MongoClient
+# Requires the PyMongo package.
+# The dnspython package is also required to use a mongodb+src URI string
+# https://api.mongodb.com/python/current
+client = MongoClient('YOUR-ATLAS-CONNECTION-STRING')
+result = client['sample_training']['routes'].aggregate([
+    {
+        '$match': {
+            'src_airport': 'PDX',
+            'stops': 0
+        }
+    }, {
+        '$group': {
+            '_id': {
+                'airline name': '$airline.name'
+            },
+            'count': {
+                '$sum': 1
+            }
+        }
+    }, {
+        '$sort': {
+            'count': -1
+        }
+    }, {
+        '$limit': 3
+    }
+])
+
+copy code
+The aggregation code is pretty similar in other languages as well.
+
+Wrap Up
+The MongoDB aggregation framework is an extremely powerful set of tools. The processing is done on the server itself which results 
+in less data being sent over the network. In the example used here, instead of pulling all of the documents into an application and 
+processing them in the application, the aggregation framework allows for only the three documents we wanted from our query to be sent back to the application.
+

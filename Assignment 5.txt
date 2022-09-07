@@ -1,0 +1,601 @@
+1Q.Explain super() in the context of inheritence?
+Ans.The super() function in Python makes class inheritance more manageable and extensible. 
+The function returns a temporary object that allows reference to a parent class by the keyword super.
+The super() function has two major use cases:
+To avoid the usage of the super (parent) class explicitly.
+To enable multiple inheritances​.
+svg viewer
+Code
+Single inheritance
+Consider the example below, where the parent class is referred to by the super keyword:
+1234567891011121314151617
+class Computer():
+    def __init__(self, computer, ram, storage):
+        self.computer = computer
+        self.ram = ram
+        self.storage = storage
+# Class Mobile inherits Computer
+class Mobile(Computer):
+    def __init__(self, computer, ram, storage, model):
+        super().__init__(computer, ram, storag
+Run
+In the example above, Computer is a super (parent) class, while Mobile is a derived (child) class. 
+The usage of the super keyword in line ​10 allows the child class to access the parent class’s init() property.
+In other words, super() allows you to build classes that easily extend the functionality of previously
+built classes without implementing their functionality again.
+Multiple inheritances​
+The following example shows how the Super() function is used to implement multiple inheritances:
+12345678910111213141516171819202122232425262728293031
+class Animal:
+  def __init__(self, animalName):
+    print(animalName, 'is an animal.');
+# Mammal inherits Animal
+class Mammal(Animal):
+  def __init__(self, mammalName):
+    print(mammalName, 'is a mammal.')
+    super().__init__(mammalName   
+Run
+Consider the Cat class’s instantiation on line 30
+30
+; the following is the order of events that occur after it:
+The Cat class is called first.
+The CannotSwim parent class is called since it appears before CannotFly in the order of inheritance;
+ this follows Python’s Method Resolution Order (MRO) which outlines the order in which methods are inherited.
+The CannotFly class is called.
+The Mammal class is called.
+Finally, the Animal class is called.
+Next, consider the bat object. Bats are flying mammals, but they cannot swim, which is why it is instantiated 
+with the CannotSwim class. The super function in the CannotSwim class invokes the Mammal class’s constructor after it. 
+The Mammal class then invokes the Animal class’s constructor
+
+2Q.Describe the file handling system?
+Ans.File handling in python is an important module where users can interact with files directly starting from reading, 
+writing, deleting to storing in the disk. Open a file : Python provides a built-in open () function that can be used to open a file.
+This accepts mainly two arguments and returns a file object.
+dataunbox.com/file-handling-in-python/
+
+
+3Q.In python explain multiple inheritence?
+Ans.Multiple Inheritance in python is a well-known feature that is supported by all the major 
+object-oriented programming languages. It can be described as a process where the child class or object inherits
+the methods and attributes from one or more parent classes. It is a hierarchical process that leads to reusability
+of a code, higher performance and flexibility. It also has its own disadvantages like increased complexity, more
+chances of ambiguity, and deeper coding knowledge
+Syntax #1:
+The syntax of multiple inheritances involving two base classes and a derived class is as shown below.
+class Base_1:
+	pass
+class Base_2:
+	pass
+class DerivedClass(Base_1, Base_2):
+	pass
+Syntax #2:
+The syntax of multiple inheritances involving three base classes and a derived class is as shown below.
+class Base_1:
+	pass
+class Base_2:
+	pass
+class Base_3:
+	pass 
+class DerivedClass(Base_1, Base_2, Base_3) 
+	pass
+Examples of Multiple Inheritance in Python
+Let’s go through the following program codes in Python, which implements the concept of multiple inheritances.
+Example #1
+We will begin with a simple example so as to understand the working of the concept.
+Code:
+class A:
+    def A(self):
+        print('This is class A.')        
+class B:
+    def B(self):
+        print('This is class B.')        
+class C(A,B):
+    def C(self):
+        print('Thi.s is class C which inherits features of both classes A and B.')
+o = C()
+o.A()
+o.B()
+o.C()
+
+4Q.Write the MySQL query syntax for INSERT,UPDATE AND DROP
+Ans.The most commonly used statement of MySQL Select statement. MySQL SELECT statement used to fetch data/records from database table.
+In the INSERT INTO statement of MySQL, you can insert single or multiple rows into the database table.
+MySQL UPDATE statement, you can update the single row using the UPDATE & WHERE clause statement at a time.
+The DELETE statement is used to remove/delete a specific row or multiple rows using the MySQL DELETE & WHERE clause.
+Table Of Content
+SELECT Statement MySQL
+INSERT Statement MySQL
+UPDATE Statement MySQL
+DELETE Statement MySQL
+SELECT Statement MySQL
+In MySQL, The SELECT statement is the most commonly used MySQL statement. 
+You can use the SELECT statement to fetch or get data from one or more tables within the database. 
+With SELECT statement of MySQL, you can fetch all fields of table or specified fields.
+Syntax
+In MySQL SELECT statement syntax is :-
+SELECT field1, field2 … field n
+FROM Table  
+[WHERE conditions];  
+Params
+Fields :- It’s a database column name. You can fetch one or more fields using SELECT statement.
+Table :- It’s a database table name.
+WHERE :- It’s a option. If You want to filter some data that time specify any condition using the WHERE clause.
+SELECT Statement Example
+ SELECT users.id, users.name, users.age  
+ FROM users  
+ WHERE status = active;
+INSERT INTO Statement MySQL
+In MySQL, You can use the INSERT INTO statement to insert data to your database table. With INSERT INTO statement of MySQL, you insert single row or multiple rows into database table.
+
+Syntax
+In MySQL INSERT INTO statement syntax is :-
+
+ INSERT INTO table_name ( field1, field2,…fieldN )  
+ VALUES ( value1, value2,…valueN );  
+Params
+Fields :- It’s a database column name. You can insert value into in it.
+table_name :- It’s a database table name.
+Value :- It’s your column values, that you want to insert into database
+INSERT INTO Statement Example
+Here, we will insert single row into database table name users.
+INSERT INTO users(id,name) VALUES (1, 'test');  
+Here, we will insert multiple rows into database table name users.
+INSERT INTO users  
+ (id, first_name, last_name)  
+ VALUES  
+ (5, 'wis', 'check'),  
+ (6, 'joy', 'son'),  
+ (7, 'kemal', 'case');
+UPDATE Statement MySQL
+In MySQL, You can use the UPDATE statement to update or change data to your database table. With UPDATE statement of MySQL, 
+you can change or modify table data by using MySQL WHERE Clause.
+Syntax
+In MySQL UPDATE statement syntax is :-
+
+UPDATE table_name SET field1=new-value1, field2=new-value2  
+
+[WHERE Clause]  
+Params
+table_name: – This is the name of a database table.
+Fields: – This is a database column name. Where you can update the value in it
+Value: – These are your column values, which you want to update in the database.
+WHERE: – In MySQL, where the clause is used to update specific rows in a table.
+UPDATE Statement Example
+Here, we will update data into database table using UPDATE AND WHERE Clause statement of MySQL.
+
+ UPDATE users
+ SET first_name = 'Michel'
+ WHERE id = 501;
+DELETE Statement MySQL
+In MySQL, You can use the DELETE statement to delete/remove all the data from database table.
+You can delete/remove records single data from the databse table on the basis of conditions.
+Syntax
+In MySQL DELETE statement syntax is :-
+
+DELETE FROM table_name;
+
+OR
+DELETE FROM table_name
+[WHERE Clause]; 
+Params
+table_name: – This is the name of a database table.
+WHERE: – In MySQL, where clause is used to delete specific rows in a database table.
+DELETE Statement Example
+Here, we will delete/remove data into database table using DELETE AND WHERE Clause statement of MySQL.
+
+DELETE FROM users  
+WHERE id = 15;  
+DELETE All Record From Table Example
+In MySQL, You can use the following syntax for delete all records from databse table.
+DELETE FROM users;
+
+5Q.Describe MongoDB'S feature?
+Ans.MongoDB is a document based database with a dynamic data schema. The JavaScript Object 
+Notation (JSON) that it supports is a natural fit for working with objects in modern programming 
+languages like JavaScript, Python and others. This provides an alternative to more traditional
+Relational Database Management Systems (RDBMS) such as SQL. MongoDB is an example of a NoSQL databases.
+These databases often use collections of documents instead of the tables used in RDBMS. These databases
+support dynamic database schemas making them responsive to changes in the structure of data.
+This short primer gives some examples of using MongoDB with Python using the pymongo library. 
+This concludes by introducing mongoengine for working with Mongo databases in modern software projects 
+as well as how to convert them into dataframe objects for further analysis. It is assumed that readers are 
+comfortable downloading and setting up MongoDB and have some basic experience of using Python.
+Structure
+The structure of a document database differs from that of a relational database that stores data in rows (records) and columns (fields).
+Image showing an example stock table form a relational database (Image by author)
+In this structure each column should only contain data of the same type. For example, we would only expect to see 
+stock item data in the stock item column. Any new data would require making a new column or a new table and then defining a
+relationship between the tables using a unique identifier (a primary key) referred to as a foreign key in subsequent tables. 
+Changing the structure of this data, especially when it already contains data can be more complex and may require the use of migration tools.
+In contrast to this MongoDB stores data as collections of documents using key/value pairs
+A set of documents containing data (Image by author)
+Unlike relational databases where we would have to create a new column in a table to store information, data can be embedded. 
+This means we only need store what’s relevant rather than creating redundancy.
+Getting started
+Pymongo is a Python driver for MongoDB allowing you to interact with Mongo databases using Python. 
+You first need to have installed MongoDB on your system. If you haven’t already done so,
+you can read how do that here: https://docs.mongodb.com/manual/installation/
+To use pymongo, you first need to install the library, for example with pip in the Python prompt:
+pip install pymongo
+Next, we need to import the pymongo library into a Python file or Jupyter notebook.
+import pymongo
+And then connect to a Mongo client. This connects on the default host and port.
+client = pymongo.MongoClient(“mongodb://localhost:27017/”)
+We can then create a database to store some data. In this example it’s going to store some details of patients for a health system.
+db = client[“med_data”]
+Next, we can add a collection to that database. Each database can contain multiple collections. 
+This collection will be called patient_data and we will reference the collection in Python using the variable my_collection.
+my_collection = db["patient_data"]
+Inserting data
+We can then add some data (a document) to the collection. Let’s say we wanted to store some basic details about a patient. 
+This could include their name, age, biological sex and heart rate. We will also store their blood pressure which is typically 
+displayed with two numbers representing the systolic and diastolic pressure and is typically measured in millimetres of
+mercury (mmHg), for example 156/82. In MongoDB, fields (data items) are encapsulated within braces ({}) using JavaScript 
+object notation. Each field consists of a key/value pair. The field name (key) is enclosed in quotation marks followed by a colon 
+and then the related value. Textual (text data) values are also encapsulated in quotation marks, numbers (numeric data) are not. 
+Values can also contain other objects and arrays. Arrays can store lists of data and other key value pairs and are denoted with
+ the square brackets ([]). Here we can store the keys and values for the systolic (sys) and diastolic (dia) blood pressure along with the data values.
+
+patient_record = {
+   "Name": "Maureen Skinner",
+   "Age": 87,
+   "Sex": "F",
+   "Blood pressure": [{"sys": 156}, {"dia": 82}],
+   "Heart rate": 82
+}
+Multiple documents can be added by simply adding a comma after the closing brace and adding additional objects. The different objects can also contain completely different data fields as required.
+
+Once we have created a document(s), we can add it to the collection. To add a single document we first 
+specify the collection we want to add in to followed by a dot then we can use the insert_one function 
+(for many we use the insert_many) passing in the document object variable:
+
+my_collection.insert_one(patient_record)
+To view the contents of the collection we can loop over each item of the collection and print it.
+
+for item in my_collection.find():
+    print(item)
+This will output the data like so:
+
+
+Image by author
+Viewing the data this way makes it quite difficult to read especially if you have a lot of fields and documents to 
+output. Fortunately Python has a pretty print library for just such a purpose. If we modify the code to import the
+library and use the function (note the double ‘p’ in print):
+
+from pprint import pprint
+for item in my_collection.find():
+    pprint(item)
+You can see that it outputs the data in a much easier to read format:
+
+Image by author
+Note that MongoDB automatically adds an ObjectId to uniquely identify each document. 
+This is a 12-byte hexadecimal string consisting of a timestamp, randomly generated value and incrementing counter. 
+These id’s are displayed when data is output. You can also override this by providing your own values for the “_id” field if required.
+
+We can add multiple records at a time using the insert_many function:
+
+patient_records = [
+ {
+   "Name": "Adam Blythe",
+   "Age": 55,
+   "Sex": "M",
+   "Blood pressure": [{"sys": 132}, {"dia": 73}],
+   "Heart rate": 73
+ },
+ {
+   "Name": "Darren Sanders",
+   "Age": 34,
+   "Sex": "M",
+   "Blood pressure": [{"sys": 120}, {"dia": 70}],
+   "Heart rate": 67
+ },
+ {
+   "Name": "Sally-Ann Joyce",
+   "Age": 19,
+   "Sex": "F",
+   "Blood pressure": [{"sys": 121}, {"dia": 72}],
+   "Heart rate": 67
+ }
+]
+my_collection.insert_many(patient_records)
+Updating data
+We may also want to update data that we have previously added to a collection. Again we can update a single or multiple records. Let’s say we accidentally added the same heart rate for Darren Sanders and Sally-Ann Joyce. Darren’s was supposed to be 88. Here we can use the update_one function passing in the field we want to update searching for the key/value pair “name” and “Darren Sanders” then we use the $set option (preceded by a dollar sign) specifying the key (heart rate) and the new value (88). This will overwrite the initial value with the new one.
+
+my_collection.update_one({"Name": "Darren Sanders"}, {"$set":{"Heart rate": 88}})
+As you have seen, we can nest multiple layers of objects and arrays in one another thus embedding data. Another option is to separate out data in a separate collection and link to it. We will look at both embedding and linking and questions to help you determine which is best to use.
+
+Embedding or linking data
+We can nest data by embedding it. Consider that we want to store some medical test results for a patient. This could include some blood test results and an ECG/EKG image for some investigations for a heart attack and some blood tests, including:
+
+Creatine Kinase (CK)
+Troponin I (TROP)
+Aspartate aminotransferase (AST)
+We can start by creating a field called “test results” which contains an array.
+
+patient_record = {
+  "Hospital number": "3432543",
+  "Name": "Karen Baker",
+  "Age": 45,
+  "Sex": "F",
+  "Blood pressure": [{"sys": 126}, {"dia": 72}],
+  "Heart rate": 78,
+  "Test results" : []
+}
+Inside this array we can store objects for the ECG (a path to the image file) and another array to store the biochemical results.
+
+patient_record = {
+  "Hospital number": "3432543",
+  "Name": "Karen Baker",
+  "Age": 45,
+  "Sex": "F",
+  "Blood pressure": [{"sys": 126}, {"dia": 72}],
+  "Heart rate": 78,
+  "Test results" : [
+    {
+      "ECG": "\scans\ECGs\ecg00023.png"
+    },
+    {
+      "BIOCHEM": []
+    }
+  ]
+}
+Finally, we can add the blood results as key/value pairs:
+
+patient_record = {
+  "Hospital number": "3432543",
+  "Name": "Karen Baker",
+  "Age": 45,
+  "Sex": "F",
+  "Blood pressure": [{"sys": 126}, {"dia": 72}],
+  "Heart rate": 78,
+  "Test results" : [
+   {
+     "ECG": "\scans\ECGs\ecg00023.png"
+   },
+   {
+     "BIOCHEM": [{"AST": 37}, {"CK": 180}, {"TROPT": 0.03}]
+   }
+  ]
+}
+We can write these on the same line like we did with the blood pressure or on separate lines to aid with readability.
+
+An alternative to embedding data in this way is to instead link to it. Linking data is also called referencing. This involves storing data in a different collection and referencing it by id. Deciding whether or not to link or embed data is dependent on certain considerations, such as:
+
+How often you need to access the embedded information?
+Is the data queried using the embedded information?
+Is the embedded data subject to frequent change?
+How often do you need to access the embedded data without the other information it’s embedded in?
+Depending on the answer to these questions, you may want to link to the data instead. Consider the following example. You may want to store some information about what drugs have been prescribed for a given patient. You could embed this information, but what if you also wanted to store more generic information about the medication also. Here you could have a separate collection with such information that you could link to.
+
+medication_data = [
+ {
+   "_id": ObjectId('60a3e4e5f463204490f70900'),
+   "Drug name": "Omeprazole",
+   "Type": "Proton pump inhibitor",
+   "Oral dose": "20mg once daily",
+   "IV dose": "40mg",
+   "Net price (GBP)": 4.29
+ },
+ {
+   "_id": ObjectId('60a3e4e5f463204490f70901'),
+   "Drug name": "Amitriptyline",
+   "Type": "Tricyclic antidepressant",
+   "Oral dose": "30–75mg daily",
+   "IV dose": "N/A",
+   "Net price (GBP)": 1.32
+ }
+]
+We can use the id’s and the DBRef function to reference this data in another collection. For example:
+
+from bson.dbref import DBRef
+patient_records = [
+ {
+   "Hospital number": "9956734",
+   "Name": "Adam Blythe",
+   "Age": 55,
+   "Sex": "M",
+   "Prescribed medications": [
+     DBRef("medication_data", "60a3e4e5f463204490f70900"),
+     DBRef("medication_data", "60a3e4e5f463204490f70901")
+   ]
+ },
+ {
+   "Hospital number": "4543673",
+   "Name": "Darren Sanders",
+   "Age": 34,
+   "Sex": "M",
+   "Prescribed medications": [
+     DBRef("diagnosis_data", "60a3e4e5f463204490f70901")
+   ]
+ }
+]
+Querying data
+There are several methods for querying data. All of the methods use the find() function. A query can be provided followed by the field or fields you wish to return in the form:
+
+collection.find({ <query> }, { <field(s)> })
+To find a single entry, for example the patient with the name “Darren Sanders” we could use the find function and print the first item in the list:
+
+pprint(my_collection.find({"Name": "Darren Sanders"})[0]
+We could also use a loop to output the results. We can also store the query in a separate variable that we pass into the find function first. This is useful when the query might be complex as it helps with the readability of the code:
+
+query = {"Name": "Darren Sanders"}
+doc = my_collection.find(query)
+for i in doc:
+  pprint(i)
+Finally, if we only want a single result we can use the find_one() function:
+
+my_collection.find_one({"Name": "Darren Sanders"})
+A common thing to do with databases is to query a subset of data depending on certain criteria. We can use comparison operators to retrieve subsets of data. For example we could use the greater than operator ($gt) to search for all patient names with a heart rate > 70 beats per minute.
+
+for heart_rate in my_collection.find({"Heart rate": {"$gt": 70}}, {"Name"}):
+    pprint(heart_rate)
+There are many such comparison operators available, including:
+
+
+(Image by author)
+This functionality can be further enhanced by using logical operators. For example, we could search for patients with a heart rate < 70 beats per minute, and who are aged above 20 years.
+
+result = my_collection.find({
+ "$and" : [
+     {
+         "Heart rate": {"$lte": 70}
+     },
+     {
+         "Age": {"$gt": 20}
+     }
+   ]
+})
+for pt in result:
+    pprint(pt)
+Logical operators include:
+
+
+(Image by author)
+You might be wondering how we find data that’s contained in arrays. This can be done by using a period (dot). For example you may recall that we stored the patients’ systolic and diastolic blood pressure like so:
+
+"Blood pressure": [{"sys": 126}, {"dia": 72}]
+We could query patients with a systolic (sys) blood pressure less than 140 mmHG (mm of mercury) like so:
+
+for normal in my_collection.find({"Blood pressure.sys": {"$lt": 140}}):
+    pprint(normal)
+Note that we reference the key “blood pressure” add a period (dot) and then the key inside the array, for example sys for systolic.
+
+Working with existing data
+One of the great things about MongoDB is that it is really straight forward to load JSON files and add them to collections. For example if we had some JSON data stored in a JSON file, we could use the json library to read in this data and add it to a MongoDB collection:
+
+import json
+with open('data_file.json') as f:
+  file_data = json.load(f)
+ 
+my_collection.insert_many(file_data)
+You wouldn’t want to output the entire contents of a database with hundreds of thousands of documents. To view the file and see the structure of the data, you may instead output the first n documents instead. For example the first 10 documents. This can be achieved using the limit() function.
+
+for item in my_collection.find().limit(10):
+    pprint(item)
+To check the number of documents in a collection we can use the count_documents function like so:
+
+my_collection.count_documents({})
+Again we could add a query here to count all the documents that meet some criteria of interest.
+
+Aggregation
+Often when working with data we don’t just want to extract subsets of data using queries, we instead want to produce new information from the existing data. This often involves carrying out various calculations like finding the average or sum of some value. For example the average wage of employees.
+
+Let’s look at a brief example using a sample dataset containing details of restaurant data (the data can be found here: https://docs.atlas.mongodb.com/sample-data/available-sample-datasets/).
+
+An example document can be seen below:
+
+
+(Image by author)
+You can see details of the restaurant address, which borough it is in, the type of cuisine, name, id and details of grades awarded with associated scores. Let’s say we wanted to compute the average scores of the restaurants. To achieve this we can use the aggregate function.
+
+result = my_collection.aggregate(
+  [
+     {"$unwind": "$grades"},
+     {"$match”: {}}, 
+     {"$group": {"_id": "$name", "Avg grade": {"$avg": "$grades.score"}}}
+  ]
+)
+We pass an array to the aggregate function. The $unwind parameter is used to deconstruct the grades array in order to output a document for each element. Next we use the $match parameter including everything (by using open and closing braces). We could filter further here by providing additional criteria. Next we use the $group parameter to group the data that we want to apply the computation to. Finally we create new key called “Avg grade” and apply the $avg (average) parameter to the grades scores referencing grades followed by a dot and the score key.
+
+Producing the following output (shortened for brevity):
+
+{'Avg grade': 15.2, '_id': 'Red Star Restaurant'}
+{'Avg grade': 13.0, '_id': 'Weather Up'}
+{'Avg grade': 9.4, '_id': 'La Nueva Playitas'}
+{'Avg grade': 13.0, '_id': “Marcella’S Pizzeria & Catering”}
+{'Avg grade': 9.0, '_id': 'Hot Wok'}
+{'Avg grade': 9.333333333333334, '_id': '99 Favor Taste'}
+{'Avg grade': 18.0, '_id': 'Flavors Corner'}
+{'Avg grade': 10.666666666666666, '_id': 'Corona Restaurant'}
+{'Avg grade': 9.0, '_id': 'Mila Cafe'}
+{'Avg grade': 8.0, '_id': 'Circle Line Manhattan'}
+{'Avg grade': 15.6, '_id': “The Old Time Vincent’S”}
+{'Avg grade': 10.833333333333334, '_id': 'Riko'}
+{'Avg grade': 10.0, '_id': 'Fresh Tortillas'}
+{'Avg grade': 10.333333333333334, '_id': 'Le Village'}
+{'Avg grade': 13.2, '_id': 'Ruay Thai Restaurant'}
+{'Avg grade': 12.0, '_id': 'Lechonera Don Pancholo'}
+{'Avg grade': 11.0, '_id': 'Pepe Rosso Social'}
+. . .
+There are many other parameters that can be used for common computations such as $sum, $min, $max etc.
+
+We can also add additional functionality as required. For example we might want to sort the returned in ascending or descending order. We could simply add another line with the sort parameter specifying which field to sort by. 1 (ascending) or -1 (descending).
+
+result = my_collection.aggregate(
+  [
+      {"$unwind": "$grades"},
+      {"$match": {}}, 
+      {"$group": {"_id": "$name", "Avg grade": {"$avg": "$grades.score"}}},
+      {"$sort": {"Avg grade": -1}}
+  ]
+)
+Another option to sort without using the aggregate function is to use the sort function directly passing in the field name, for example sorting by name:
+
+for item in my_collection.find().sort("name").limit(10):
+    pprint(item)
+We can choose ascending/descending by adding a 1 or -1 after the field to sort:
+
+for item in my_collection.find().sort("name", -1).limit(10):
+    pprint(item)
+Using MongoDB in software projects and for data science
+One of the main advantages of MongoDB using the JSON format is the interoperability that this provides with programming languages that use a similar format. This makes working with data in an application and storing/retrieving it from a database near seamless.
+
+A better way of integrating a database into code is to use a method such as Object Relational Mapping (ORM), or in the case of MongoDB an Object Document Mapper (ODM). This works by translating Python (or some other languages) code into MongoDB statements to retrieve data. This data is then passed back into Python objects. This has the advantage of ensuring that you only need to use one language (e.g. Python) to access and use the database.
+
+
+(Image by author)
+A good library for doing this is mongoengine. Here we import the library and connect to a Mongo client which we will call odm_patients.
+
+from mongoengine import *
+connect('odm_patients')
+The following example shows how we can create a Python class to model some data, create a few instances of that class and write this to a database. Following the previous example we will create a class to store data about patients.
+
+class Patient(Document):
+    patient_id = StringField(required=True)
+    name = StringField()
+    age = IntField()
+    sex = StringField(max_length=1)
+    heart_rate = IntField()
+We can use a Python class to create an object to manipulate the database. Here we create the data items by specifying what sort of field they are. For example textual/string data can be created using a StringField() function and integers with IntField(). Additional parameters can also be added such as the amount of characters in a string and if a field cannot be null/empty.
+
+We can now create instances of this class in the standard way in Python. Here we can create a couple of patients called Maxine and Hamza. Note that we add the save() function to the end of the line to write this data to the database.
+
+maxine_patient = Patient(patient_id = "342453", name = "Maxine Smith", age = 47, sex = "F", heart_rate = 67).save()
+hamza_patient = Patient(patient_id = "543243", name = "Hamza Khan", age = 22, sex = "M", heart_rate = 73).save()
+We can output these objects using a loop. To access specific fields we can use the iterator, a dot and then the field we wish to output. For example the patients name, id and age.
+
+for patient in Patient.objects:
+    print(patient.name, patient.patient_id, patient.age)
+Which produces the following output:
+
+Maxine Smith 342453 47
+Hamza Khan 543243 22
+Apart from integrating Mongo databases into software projects, we can also use this for research and data science/analysis tasks too. There is an easy way to convert data from a Mongo database into tabular form as a Panda’s dataframe object. Firstly we import the pandas library.
+
+import pandas as pd
+Next we select the required data using a standard query, for example we will retrieve all the names for bakeries in the Bronx. Next we convert the results into a list data structure.
+
+extracted_data = my_collection.find({},{"borough": "Bronx", "cuisine": "Bakery", "name": 1})
+bronx_bakeries = list(extracted_data)
+Finally we create a data frame using the from_dict function to convert the dictionaries into a tabular data frame:
+
+pd.DataFrame.from_dict(bronx_bakeries)
+This produces the following output:
+
+
+(Image by author)
+In summary, MongoDB is a powerful and scalable database that is very useful when the data schema is prone to frequent change. This lends itself to integration with modern software systems easily and can also be used as part of a data analysis pipeline when analysing data in JSON format, such as some mobile app data or Twitter data. MongoDB is one of the most popular NoSQL databases and an awareness of what it is and how it works is a must for software engineers and data scientists.
+
+105
+
+
+1
+
+105
+
+
+1
+
+
+
