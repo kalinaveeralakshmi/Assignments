@@ -1,0 +1,31 @@
+1Q.What makes numpy.shape()different from numpy.size()?
+ans.some numpy operations take an argument called shape as np.zeros,whereas some others take an
+arguments called size,such as np.random .randint.to me those arguments have the same function
+and the fact that they have different names is a bit confusing.actually size seems a bit off.
+sence it really specifies the shape of the output.The actual relation between the two is 
+size=np.proud(shape).
+
+2Q.In numpy describe the idea of broadcasting.
+ans.the term broadcasting to treat arrays of different shapes during arithmetic operations
+arithmetic operations on arrays are usually done on corresponding elements if two arrays
+are usually done on corresponding elements if two arrays are of exactly the same shape,then
+these operations are smoothly performed.
+operations on arrays of non-similar shapes is still possible in numpy,because of the 
+broadcasting capability.
+
+3Q.What makes python better than other libraries for numerical computations?
+ans.storing data in lists&traversing lists with plain python for loops leads to show code,
+especially when compared with similar code in compiled languages such as fortran,c,or c++
+fortunately there is an extension of python commonly called numerical python,or abbreviated
+Numpy,which offers efficient array computations.
+
+4Q.How does Numpy deal with files?
+ans.Numpy introduces a simple file format for nd array objects.This npy files stores data,
+shape,d type an other information required to reconstruct the nd array in a disk file such
+that the array is correctly retrived even if the file is on another machine with different 
+architecture.
+
+5Q.Mention the importance of Nump.empty()
+ans.The empty()function is used to create a new array of given shape and type,without initializing
+elements.
+syntax:numpy.empty (shape,dtype=float,order='c')
